@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+    {% block title %}
+    {% for article in articles %}
+    <title>
+        Article List
+    </title>
+     {%  endfor %}
+    {% endblock %}
+    <!--
+    <link rel="shortcut icon" href="{%  static 'profile.ico' %}">
+    -->
+{% block body %}
+    <a href="{% url 'index_page' %}">Back</a> <br>
+    <br>
+    {% if user.is_authenticated %}
+    <a href="{% url 'article:article_submit' %}">Submit a New Article</a>
+    <br>
+    <p>Here are the tiles of our articles</p><br>
+    {% else %}
+        Please Login first, then submit your new article! <br><br>
+    {% endif %}
+
+    {% for article in articles %}
+    <p> Article: {{ article.title }}</p>
+    <p> Text: {{ article.body|slice:'10' }}...</p>
+    <p> Created Date: {{ article.created }}</p>
+    <p><a href="{% url 'article:article_detail' article.id %}">Check detail</a></p><br>
+
+    {% endfor %}
+{% endblock %}

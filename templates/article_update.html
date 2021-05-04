@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+    {% block title %}
+        Update Article
+    {% endblock %}
+
+    {% block body %}
+    <a href="{% url 'article:article_detail' article.id %}">Back</a> <br>
+    <form method = "post" action=".">
+        {% csrf_token %}
+        update title : <input type="text" name="title" value="{{ article.title }}">
+        update text : <input type="text" name="body" value="{{ article.body }}">
+        <input type="submit" value="submit">
+    </form>
+    {% endblock %}

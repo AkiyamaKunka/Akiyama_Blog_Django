@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title  %}
+
+    {% endblock %}</title>
+    <link rel="shorcut icon" href="{% static 'profile.ico' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: deepskyblue;
+   color: white;
+   text-align: center;
+}
+</style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>{{ user.username }}, welcome.</p>
+        <a href="{% url 'user_profile:logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'user_profile:login' %}">Login</a>
+    {% endif %} <br><br>
+
+    {% block body %}
+    {% endblock %}
+
+<div class="footer">
+    <p style="text-align:center;">Copy Right @ Akiyama Kunka</p>
+    <p style="text-align:center;">CS '24 @ University of North Carolina at Chapel Hill</p>
+    <p style="text-align:center;">"Code for fun, make things happen."</p>
+
+</div>
+
+</body>
+</html>

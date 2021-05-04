@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block title %}
+    Login User
+{% endblock %}
+{% block body %}
+     <a href="{% url 'index_page' %}">Back</a>
+     <form method="post" action=".">
+        {% csrf_token %}
+        username : <input type="text" name="username">
+        password : <input type="password" name="password">
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}

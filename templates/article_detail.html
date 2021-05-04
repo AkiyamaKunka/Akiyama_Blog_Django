@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+    {% block title %}
+        Article Detail
+    {% endblock %}
+
+    {% block body %}
+        <a href="{% url 'article:article_list' %}">Back</a> <br>
+    <p>
+        {{ article.title }}
+        <br>
+        {{ article.body }}
+    </p>
+    <a href="{% url 'article:article_delete' article.id %}">Detele this Article</a>
+    <br>
+    <a href="{% url 'article:article_update' article.id %}">Update this Article</a>
+    {% endblock %}

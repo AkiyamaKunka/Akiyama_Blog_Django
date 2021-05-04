@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Akiyama Blog
+{% endblock %}
+
+{% block body %}
+
+    <p style="text-align:center;"><a href="{% url 'article:article_list' %}">Check Article List</a></p>
+    <p style="text-align:center;">
+        <a href={% url 'self_intro_page' %}>
+            <img alt="Selfie" src="{% static 'selfie.jpg' %}" width=230" height="400">
+        </a>
+    </p>
+    <p style="text-align:center;"><a href="{% url 'admin:index' %}">Administrator Page</a></p>
+{% endblock %}
+

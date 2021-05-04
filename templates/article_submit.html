@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+    {% block title %}
+        Submit Article
+    {% endblock %}
+
+{% block body %}
+
+    <a href="{% url 'article:article_list' %}">Back</a> <br>
+    Please submit your article here
+    <form method = "post" action=".">
+        {% csrf_token %}
+         <!-- django must contain this token -->
+        title : <input type="text" name="title"> <br>
+        text : <input type="text" name="body"> <br>
+        <input type="submit" value="submit">
+    </form>
+
+
+{% endblock %}
+
