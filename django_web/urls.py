@@ -25,4 +25,5 @@ urlpatterns = [
     path('self_intro/', views.self_intro_page, name='self_intro_page'),
     path('user_profile/', include('userprofile.urls', namespace='user_profile')),
     # here is a little bit different from the tutoring
+    path('password_reset/', include('password_reset.urls')),
 ]

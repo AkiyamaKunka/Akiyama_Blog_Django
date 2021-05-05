@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import ArticlePost
 from .form import ArticlePostForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import authenticate, login
 # Create your views here.
@@ -15,6 +16,10 @@ def show_detail(request, id):
     article = ArticlePost.objects.get(id=id)
     context = {'article' : article}
     return render(request, 'article_detail.html', context)
+
+
+
+@login_required(login_url='/userprofile/login/')
 def article_submit(request):
     if request.method == "POST":
         article_post_form = ArticlePostForm(data=request.POST)
@@ -34,10 +39,14 @@ def article_submit(request):
         empty_article_post_form = ArticlePostForm()
         context = {'empty_article_post_form' : empty_article_post_form}
         return render(request, 'article_submit.html', context)
+
+@login_required(login_url='/userprofile/login/')
 def article_delete(request, id):
     article = ArticlePost.objects.get(id=id)
     article.delete()
     return render(request, 'index_page.html')
+
+@login_required(login_url='/userprofile/login/')
 def article_update(request, id):
     article = ArticlePost.objects.get(id = id)
     if request.method == "POST":

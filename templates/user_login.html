@@ -5,7 +5,8 @@
 {% block title %}
     Login User
 {% endblock %}
-{% block body %}
+{% block content %}
+
      <a href="{% url 'index_page' %}">Back</a>
      <form method="post" action=".">
         {% csrf_token %}
@@ -13,4 +14,5 @@
         password : <input type="password" name="password">
         <input type="submit" value="Login">
     </form>
+     <p>Forgot Password ? <a href="{% url 'password_reset_recover' %}">Click Here</a></p>
 {% endblock %}

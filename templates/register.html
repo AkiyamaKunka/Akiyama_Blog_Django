@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    User Register
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'index_page' %}">Back</a><br>
+
+    <form method = "post" action=".">
+        {% csrf_token %}
+        username :  <input type="text" name="username" required> <br>
+        email :    <input type="text" name="email" required> <br>
+        password :   <input type="password" name="password" required><br>
+        re-enter password : <input type="password" name="password_2" required><br>
+    <input type="submit" value="register">
+    </form>
+
+{% endblock %}

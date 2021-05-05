@@ -5,7 +5,7 @@
         Update Article
     {% endblock %}
 
-    {% block body %}
+    {% block content %}
     <a href="{% url 'article:article_detail' article.id %}">Back</a> <br>
     <form method = "post" action=".">
         {% csrf_token %}

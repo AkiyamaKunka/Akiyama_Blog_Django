@@ -2,15 +2,15 @@
 {% load staticfiles %}
     {% block title %}
     {% for article in articles %}
-    <title>
+
         Article List
-    </title>
+
      {%  endfor %}
     {% endblock %}
     <!--
     <link rel="shortcut icon" href="{%  static 'profile.ico' %}">
     -->
-{% block body %}
+{% block content %}
     <a href="{% url 'index_page' %}">Back</a> <br>
     <br>
     {% if user.is_authenticated %}
@@ -28,4 +28,5 @@
     <p><a href="{% url 'article:article_detail' article.id %}">Check detail</a></p><br>
 
     {% endfor %}
+    
 {% endblock %}

@@ -7,3 +7,5 @@ def index_page(request):
 
 def self_intro_page(request):
     return render(request, 'self_intro.html')
+
+

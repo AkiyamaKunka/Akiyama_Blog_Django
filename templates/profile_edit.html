@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Profile Edit
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'index_page' %}">Back</a><br>
+    User : {{ user.username }}
+    <form method="post" action=".">
+        {% csrf_token %}
+        Edit your profile:
+        phone : <input type="text" name="phone" value="{{ profile.phone }}">
+        bio : <input type="text" name="bio" value="{{ profile.bio }}">
+    <button type="submit" >Edit Confirm</button>
+    </form>
+{% endblock%}
