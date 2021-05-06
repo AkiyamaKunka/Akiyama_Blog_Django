@@ -1,2 +1,2 @@
-# akiyama_blog_django
+# Akiyama_Blog_Django
 Akiyama's Blog, powered by django.
