@@ -6,11 +6,28 @@
     {% endblock %}
 
 {% block content %}
+
+        {% verbatim %}
+        <div id ='operator'>
+            <p>
+                {{ message }}
+            </p>
+            <input v-model="message">
+        </div>
+        <script type="text/javascript">
+            var myVue = new Vue({
+                el : '#operator',
+                data : {
+                    message : "Fuck Internship!"
+                },
+            });
+        </script>
+        {% endverbatim %}
+
+        <div class="myTest mySetWidth myRelative">
         <a href="{% url 'index_page' %}">Back</a>
-        <h1 style="text-align:center;">Akiyama Kunka</h1>
-        <h2 style="text-align:center;">Software Development Engineer to be. Code for fun, make things happen.</h2>
-        <p style="text-align:center;">
-            CS '24 @ University of North Carolina at Chapel Hill
-        </p>
+        <h1 style="text-align:center;">Software Development Engineer to be. </h1>
+            <h2 style="text-align:center;">Code for fun, make things happen.</h2>
+        </div>
 
 {% endblock %}

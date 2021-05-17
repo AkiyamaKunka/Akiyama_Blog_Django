@@ -1,0 +1,17 @@
+
+div.myTest{
+    width: 100%;
+    border: 2px solid gray;
+    color: white;
+    background-color: #494949;
+    padding: 0.8em 0.8em 0.6em;
+}
+
+div.mySetWidth{
+    width: 600px;
+}
+
+div.myRelative{
+    position: relative;
+    margin: 90px auto;
+}

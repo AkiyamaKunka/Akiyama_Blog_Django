@@ -7,20 +7,26 @@
     {% endblock %}</title>
     <link rel="shorcut icon" href="{% static 'profile.ico' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src ="{% static 'vue.js' %}" type="text/javascript" charset="UTF-8"></script>
+    <link rel="stylesheet" href="{% static 'paper_display.css' %}">
 <style>
 .footer {
    position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: 	#4B9CD3;
+   background-color: 	#494949;
    color: white;
    text-align: center;
 }
+
 </style>
 </head>
 <body>
+
+    Say something.
     {% if user.is_authenticated %}
+
         <p>
             {{ user.username }}, welcome.
             <form
@@ -39,9 +45,21 @@
     {% endblock %}
 
 <div class="footer">
-    <p style="text-align:center;">Copyright @ Akiyama Kunka 2021</p>
-    <p style="text-align:center;">CS '24 @ University of North Carolina at Chapel Hill</p>
-    <p style="text-align:center;">Code for Fun, Make Things Happen.</p>
+    <p style="text-align:center;">© Akiyama Kunka 2021</p>
+    <p style="text-align:center;">CS '24 @ University of Wisconsin - Madison</p>
+    <p style="text-align:center;">Powered by Django</p>
+
+    <a href= "https://www.instagram.com/Akiyama_Kunka/">
+        <img src="{% static 'Instagram-Glyph-Color-Logo.wine.svg' %}"  width="80" height="80"/>
+    </a>
+<a href= "https://github.com/AkiyamaKunka">
+        <img src="{% static 'GitHub-Icon-White-Logo.wine.svg' %}"  width="80" height="80"/>
+    </a>
+    <a href= "https://www.linkedin.com/in/junjia-wang-a11341200/">
+        <img src="{% static 'LinkedIn-Icon-Logo.wine.svg' %}"  width="80" height="80"/>
+    </a>
+
+
 </div>
 
 </body>
