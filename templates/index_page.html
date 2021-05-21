@@ -8,11 +8,10 @@
 {% block content %}
 
     <a href="{% url 'user_profile:register' %}">Register a New User Account</a>
-    <p style="text-align:center;"><a href="{% url 'article:article_list' %}">Check Article List</a></p>
     <p style="text-align:center;">
         <a href={% url 'self_intro_page' %}>
             <img alt="Selfie" src="{% static 'selfie.jpg' %}" width=230" height="430">
         </a>
     </p>
-    <p style="text-align:center;"><a href="{% url 'admin:index' %}">Administrator Page</a></p>
+{#    <p style="text-align:center;"><a href="{% url 'admin:index' %}">Administrator Page</a></p>#}
 {% endblock %}

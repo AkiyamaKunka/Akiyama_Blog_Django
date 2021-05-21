@@ -24,7 +24,22 @@
         </script>
         {% endverbatim %}
 
+        <script>
+        var abs = function (x){
+            if (x >= 0){
+                return x;
+            }else{
+                return -x;
+            }
+        };
+        var judge = abs();
+        console.log(judge);
+        </script>
+
+
+
         <div class="myTest mySetWidth myRelative">
+
         <a href="{% url 'index_page' %}">Back</a>
         <h1 style="text-align:center;">Software Development Engineer to be. </h1>
             <h2 style="text-align:center;">Code for fun, make things happen.</h2>

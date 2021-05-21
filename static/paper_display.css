@@ -13,5 +13,142 @@ div.mySetWidth{
 
 div.myRelative{
     position: relative;
-    margin: 90px auto;
+    margin: 20px auto;
 }
+
+.header {
+    background-color: 	#494949;
+    /*font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;*/
+    line-height: 1;
+    height: 1.8cm;
+    width: 100%;
+    position: relative;
+    top: 0;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+	 text-align: center;
+}
+
+.Akiyama{
+    color: gray;
+    display: inline-block;
+    float: left;
+    font-size: 1.5555555556em;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin-left: 20px;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    text-decoration: none;
+    transition: all .5s ease;
+    position: relative;
+
+}
+
+
+.footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: 	#494949;
+   color: white;
+   text-align: center;
+}
+
+div.neon-btn {
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-around;
+		  height: 100vh;
+		  background: #031628;
+
+		}
+
+		.btn {
+		  border: 1px solid;
+		  background-color: transparent;
+		  text-transform: uppercase;
+		  font-size: 14px;
+		  padding: 10px 20px;
+		  font-weight: 300;
+			text-decoration:none
+		}
+
+		.one {
+		  color: #4cc9f0;
+		}
+
+		.two {
+		  color: #f038ff;
+		}
+
+		.three {
+		  color: #b9e769;
+		}
+
+		.btn:hover {
+		  color: white;
+		  border: 0;
+		}
+
+		.one:hover {
+		  background-color: #4cc9f0;
+		  -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+		  -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+		  box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+		}
+
+		.two:hover {
+		  background-color: #f038ff;
+		  -webkit-box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);
+		  -moz-box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);
+		  box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);
+		}
+
+		.three:hover {
+		  background-color: #b9e769;
+		  -webkit-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+		  -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+		  box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+		}
+
+/*div.loading-btn {*/
+/*			  display: flex;*/
+/*			  align-items: center;*/
+/*			  justify-content: center;*/
+/*			  height: 100vh;*/
+/*			}*/
+
+/*			button {*/
+/*			  background: transparent;*/
+/*			  border: 0;*/
+/*			  border-radius: 0;*/
+/*			  text-transform: uppercase;*/
+/*			  font-weight: bold;*/
+/*			  font-size: 20px;*/
+/*			  padding: 15px 50px;*/
+/*			  position: relative;*/
+/*			}*/
+
+/*			button:before {*/
+/*			  transition: all 0.8s cubic-bezier(0.7, -0.5, 0.2, 2);*/
+/*			  content: '';*/
+/*			  width: 1%;*/
+/*			  height: 100%;*/
+/*			  background: mistyrose;*/
+/*			  position: absolute;*/
+/*			  top: 0;*/
+/*			  left: 0;*/
+/*			}*/
+
+/*			button span {*/
+/*			  mix-blend-mode: darken;*/
+/*			}*/
+
+/*			button:hover:before {*/
+/*			  background: mistyrose;*/
+/*			  width: 100%;*/
+/*			}*/

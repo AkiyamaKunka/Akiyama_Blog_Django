@@ -21,12 +21,14 @@
         Please Login first, then submit your new article! <br><br>
     {% endif %}
 
+
     {% for article in articles %}
+        <div class="myTest mySetWidth myRelative">
     <p> Article: {{ article.title }}</p>
     <p> Text: {{ article.body|slice:'10' }}...</p>
     <p> Created Date: {{ article.created }}</p>
     <p><a href="{% url 'article:article_detail' article.id %}">Check detail</a></p><br>
-
+    </div>
     {% endfor %}
     
 {% endblock %}

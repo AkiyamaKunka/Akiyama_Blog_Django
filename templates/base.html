@@ -9,24 +9,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src ="{% static 'vue.js' %}" type="text/javascript" charset="UTF-8"></script>
     <link rel="stylesheet" href="{% static 'paper_display.css' %}">
-<style>
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: 	#494949;
-   color: white;
-   text-align: center;
-}
+    <div class="header">
 
-</style>
+    <br>
+        <div id="neon-btn">
+            {% if user.is_authenticated %}
+		   <a href="{% url 'user_profile:logout' %}" class="btn one">Log  Out</a>
+            {% else %}
+        <a href="{% url 'user_profile:login' %}" class="btn one">Log  In</a>
+        {% endif %}
+{#		  <p style="text-align:center;">#}
+          <a href="{% url 'article:article_list' %}" class="btn two">Article List</a>
+{#          </p>#}
+            <a href="{% url 'admin:index' %}" class="btn three">Admin Page</a>
+
+		</div>
+    </div>
+
 </head>
 <body>
-
+{#    <div class="Akiyama header" >#}
+{##}
+{#    </div>#}
+{#    <div class="header">#}
     Say something.
-    {% if user.is_authenticated %}
 
+
+    {% if user.is_authenticated %}
         <p>
             {{ user.username }}, welcome.
             <form
@@ -37,14 +46,24 @@
             </form>
         </p>
         <a href="{% url 'user_profile:profile_edit' user.id %}">Edit Profile</a>
-        <a href="{% url 'user_profile:logout' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'user_profile:login' %}">Login</a>
+
     {% endif %} <br><br>
+{#    </div>#}
+
+
+
     {% block content %}
+
     {% endblock %}
 
-<div class="footer">
+
+
+
+</body>
+
+<footer>
+    <div class="footer">
+
     <p style="text-align:center;">© Akiyama Kunka 2021</p>
     <p style="text-align:center;">CS '24 @ University of Wisconsin - Madison</p>
     <p style="text-align:center;">Powered by Django</p>
@@ -59,8 +78,11 @@
         <img src="{% static 'LinkedIn-Icon-Logo.wine.svg' %}"  width="80" height="80"/>
     </a>
 
+{#        <div id="loading-btn">#}
+{#		  <button><span>Hover</span></button>#}
+{#		</div>#}
+
 
 </div>
-
-</body>
+</footer>
 </html>
