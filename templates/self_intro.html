@@ -25,15 +25,34 @@
         {% endverbatim %}
 
         <script>
-        var abs = function (x){
-            if (x >= 0){
-                return x;
-            }else{
-                return -x;
-            }
-        };
-        var judge = abs();
-        console.log(judge);
+        'use strict';
+         var xiaoming = {
+             name : 'xiaoming',
+             birth : 1990,
+             that : this,
+             age : function(){
+
+                 var cur_year = new Date().getFullYear();
+                 return cur_year - that.birth;
+             }
+         }
+
+        function get_age(){
+            var y = new Date().getFullYear();
+            return y - this.birth;
+        }
+        var count = 0;
+        var old_parseInt = parseInt(); // just to store the previous parseInt
+
+        window.parseInt = function (){
+             count += 1;
+             return oldParseInt.apply(null, arguments);
+        }
+        console.log(get_age.call(xiaoming));
+
+         //console.log(xiaoming.birth);
+         //console.log(xiaoming.age());
+
         </script>
 
 
