@@ -21,74 +21,54 @@
                     message : "Fuck Internship!"
                 },
             });
+            <!-- HTML结构 -->
+<div id="test-div">
+  <p id="test-js">javascript</p>
+  <p>Java</p>
+</div>
         </script>
         {% endverbatim %}
 
+
+
+    <ol id="test-list">
+    <li class="lang">Scheme</li>
+    <li class="lang">JavaScript</li>
+    <li class="lang">Python</li>
+    <li class="lang">Ruby</li>
+    <li class="lang">Haskell</li>
+</ol>
         <script>
         'use strict';
-         var xiaoming = {
-             name : 'xiaoming',
-             birth : 1990,
-             that : this,
-             age : function(){
+        // 获取<p>javascript</p>节点:
+        var js = document.getElementById("id");
+        // 修改文本为JavaScript:
+        js.innerHTML = "JavaScript:";
+        // 修改CSS为: color: #ff0000, font-weight: bold
+        js.style.color = '#ff0000';
+        js.style.on = 'bold';
 
-                 var cur_year = new Date().getFullYear();
-                 return cur_year - that.birth;
-             }
-         }
+        var sort = function(){
+            let elements = document.querySelectorAll('.lang');
+            let node = document.querySelector('#test-list');
+            let arr = [];
+            for(let it in elements){
+                arr.push(it);
+            }
+            arr.sort((x, y) => x.textContent - y.textContent);
+            for(let it in arr){
+                node.appendChild(it);
+            }
 
-        function get_age(){
-            var y = new Date().getFullYear();
-            return y - this.birth;
-        }
-        var count = 0;
-        var old_parseInt = parseInt(); // just to store the previous parseInt
-
-        window.parseInt = function (){
-             count += 1;
-             return oldParseInt.apply(null, arguments);
-        }
-        console.log(get_age.call(xiaoming));
-
-        var arr = [1, 3, 5, 7, 9];
-        var sum = arr.reduce(function(x, y){
-            return x * y;
-        });
-        var s_1 = "1234";
+};
 
 
-       var myList = [1, 2, 3, 4, 5, 6];
-        myList.forEach(console.log);
-
-        function lazy_sum(arr){
-            var sum_var = function(){
-                return arr.reduce(function(x, y){
-                    return x + y;
-                });
-            };
-            return sum_var;
-        }
-        var f = lazy_sum([1, 2, 3]);
-        console.log(f());
-
-        function student(name){
-            this.name = name;
-            this.hello = function(){
-                alert("Hello, " + this.name + "!");
-            };
-        }
-        function another_student(name){
-            this.name = name;
-        }
-        var std = new student("Xiaoming");
-        std.hello();
-
-
-
-        {##}
-        {#var arr = [1, 2, 3, 4, 5, 6];#}
-        {#var myString = arr.map(Math.pow);#}
-        {#console.log(myString);#}
+{#        var#}
+{#    list = document.getElementById('list'),#}
+{#    haskell = document.createElement('p');#}
+{#haskell.id = 'haskell';#}
+{#haskell.innerText = 'Haskell';#}
+{#list.appendChild(haskell);#}
 
 
         </script>
